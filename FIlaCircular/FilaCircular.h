@@ -1,0 +1,8 @@
+//
+// Created by Twist on 3/7/2026.
+//
+
+#ifndef FILACIRCULAR_FILACIRCULAR_H
+#define FILACIRCULAR_FILACIRCULAR_H
+
+#endif //FILACIRCULAR_FILACIRCULAR_H

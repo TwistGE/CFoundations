@@ -9,7 +9,7 @@
 
 //Constantes
 enum {
-    SIZE = 10
+    SIZE = 4
 };
 
 
