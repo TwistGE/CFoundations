@@ -20,7 +20,7 @@ bool push(int valor) {
 }
 
 bool pop(int *valor) {
-    if (vazia && inicio == fim) {
+    if (vazia) {
         return false;
     }
     *valor = fila[inicio];

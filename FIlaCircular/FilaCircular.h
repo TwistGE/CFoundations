@@ -7,7 +7,7 @@
 #include <stdbool.h>
 
 //Constantes
-enum {
+ enum {
     SIZE = 4
 };
 

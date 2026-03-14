@@ -13,12 +13,26 @@ void menu();
 int opcao = OP_NAO_SELECIONADA;
 int numero;
 bool vazia = true;
-
+bool popou;
 int main(void) {
     while (opcao != OP_SAIR) {
+        if (inicio != fim) {
+            vazia = false;
+        }
+        if (!vazia && inicio == fim && popou) {
+            vazia = true;
+        }
+
+        if (fim == SIZE) {
+            fim = 0;
+        }
+        if (inicio == SIZE) {
+            inicio = 0;
+        }
         menu();
         switch (opcao) {
             case OP_PUSH:
+                popou = false;
                 printf("Inserindo valor:\n");
                 scanf("%d",&numero);
                 if (push(numero)) {
@@ -28,6 +42,7 @@ int main(void) {
                 printf("Fila cheia!");
                 break;
             case OP_POP:
+                popou = true;
                 if (pop(&numero)) {
                     printf("%d saiu da fila", numero);
                     break;
@@ -39,12 +54,17 @@ int main(void) {
                 return 0;
 
         }
+
+
     }
 }
 
 void menu() {
+    printf("\n%d vazia\n", vazia);
+    printf("\n%d - Inicio\n", inicio);
+    printf("%d - Fim\n", fim);
     printf("\n\nFila Atual:\n");
-    for (int i = inicio; i < fim; i++) {
+    for (int i = 0; i < SIZE; i++) {
         if (i!= 0) {
             printf(" - %d ",fila[i]);
         }else printf("%d",fila[i]);
