@@ -64,11 +64,24 @@ void menu() {
     printf("\n%d - Inicio\n", inicio);
     printf("%d - Fim\n", fim);
     printf("\n\nFila Atual:\n");
-    for (int i = 0; i < SIZE; i++) {
+    int i = inicio;
+    if (vazia) {
+        printf("Fila vazia!");
+    }else {
+        do {
+            printf("%d < ", fila[i]);
+            i++;
+            if (i == SIZE){
+                i = 0;
+            }
+        }while (i!=fim);
+    }
+            /*
+     * (int i = 0; i < SIZE; i++) {
         if (i!= 0) {
             printf(" - %d ",fila[i]);
         }else printf("%d",fila[i]);
-    }
+    */
     printf("\n");
     printf("---Menu---\n");
     printf("%d. Entrar Fila\n", OP_PUSH);
